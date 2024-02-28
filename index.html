@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор профита</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="qqq"></div>
+      <div class="container-tg">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/512px-Telegram_2019_Logo.svg.png"
+          alt="Telegram Logo"
+          class="telegram-logo" />
+        <h1>Welcome to Telegram</h1>
+        <p>Telegram delivers messages faster than any other application.</p>
+      </div>
+      <div class="container">
+        <h2>Калькулятор профита</h2>
+
+        <form>
+          <label for="startAmount">Начальная сумма (от 50$ до 5000$):</label>
+          <input
+            type="range"
+            id="startAmount"
+            name="startAmount"
+            min="50"
+            max="5000"
+            value="50"
+            oninput="updateStartAmount(this.value)" />
+          <div class="price">
+            <div id="sliderValue">50</div>
+            <span>$</span>
+          </div>
+          <label>Тип связки:</label>
+          <div id="pairType">
+            <button type="button" value="1" onclick="selectPairType(this)">
+              Тип 1
+            </button>
+            <button type="button" value="2" onclick="selectPairType(this)">
+              Тип 2
+            </button>
+            <button type="button" value="3" onclick="selectPairType(this)">
+              Тип 3
+            </button>
+          </div>
+          <label>Количество прокрутов:</label>
+          <div id="scrolls">
+            <button type="button" value="5" onclick="selectScrolls(this)">
+              5
+            </button>
+            <button type="button" value="20" onclick="selectScrolls(this)">
+              20
+            </button>
+            <button type="button" value="50" onclick="selectScrolls(this)">
+              50
+            </button>
+            <button type="button" value="100" onclick="selectScrolls(this)">
+              100
+            </button>
+          </div>
+        </form>
+
+        <button id="calculateButton" onclick="calculateProfit()">
+          Посчитать профит
+        </button>
+
+        <div id="result"></div>
+        <div id="start-amount"></div>
+        <div id="profit"></div>
+      </div>
+      <a href="#" id="login-btn" class="login-button">Log In</a>
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
